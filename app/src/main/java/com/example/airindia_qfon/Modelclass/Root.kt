@@ -1,7 +1,9 @@
 package com.example.airindia_qfon.Modelclass
 
 import com.google.gson.annotations.SerializedName
-
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+@Entity(tableName = "AirIndia")
 
 data class Root(
     val data: List<Daum>,
@@ -10,7 +12,7 @@ data class Root(
 
 data class Daum(
     @SerializedName("_id")
-    val id: String,
+    @PrimaryKey(autoGenerate = false)  val id: String,
     val name: String,
     val trips: Long,
     val airline: List<Airline>,
